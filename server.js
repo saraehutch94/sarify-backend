@@ -13,6 +13,15 @@ const { PORT = 3001 } = process.env;
 
 // Mount middleware
 
+// logger middleware
+app.use(morgan("dev"));
+
+// "cross-origin resource sharing" middleware
+app.use(cors());
+
+// body-parsing middleware
+app.use(express.json());
+
 // Mount routes
 
 // Tell app to listen on PORT
