@@ -16,6 +16,22 @@ const { DATABASE_URL, PORT = 3001 } = process.env;
 
 mongoose.connect(DATABASE_URL);
 
+const db = mongoose.connection;
+
+// Connection status
+
+db.on("error", (error) => {
+  console.log(`Error: ${error}`);
+});
+
+db.on("connected", () => {
+  console.log("mongoDB connected");
+});
+
+db.on("disconnected", () => {
+  console.log("mongoDB disconnected");
+});
+
 // Mount middleware
 
 // logger middleware
