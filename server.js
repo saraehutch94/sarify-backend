@@ -1,5 +1,7 @@
 // Require dependencies
 const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
 
 // Initialize application
 const app = express();
