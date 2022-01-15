@@ -15,3 +15,6 @@ const trackSchema = new Schema(
   },
   { timestamps: true }
 );
+
+// Export Track Schema
+module.exports = mongoose.model("Track", trackSchema);
