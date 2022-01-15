@@ -14,6 +14,8 @@ const { DATABASE_URL, PORT = 3001 } = process.env;
 
 // Connect to database
 
+mongoose.connect(DATABASE_URL);
+
 // Mount middleware
 
 // logger middleware
