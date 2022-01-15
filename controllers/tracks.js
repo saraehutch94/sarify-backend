@@ -11,3 +11,6 @@ const trackRouter = express.Router();
 trackRouter.get("/", (req, res) => {
   res.send("Hello World!!!");
 });
+
+// Export router object
+module.exports = trackRouter;
