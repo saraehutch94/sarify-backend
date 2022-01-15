@@ -7,12 +7,12 @@ const trackRouter = express.Router();
 
 // Set up routes
 
-// // test route
-// trackRouter.get("/", (req, res) => {
-//   res.send("Hello World!!!");
-// });
-
 // index route
+trackRouter.get("/tracks", (req, res) => {
+  Track.find({}, (error, allTracks) => {
+    res.json(allTracks);
+  });
+});
 
 // delete route
 
