@@ -44,6 +44,9 @@ app.use(cors());
 // body-parsing middleware
 app.use(express.json());
 
+// Mount router middleware
+app.use("/sarify", trackController);
+
 // Tell app to listen on PORT
 app.listen(PORT, () => {
   console.log(`Express is listening on port ${PORT}`);
