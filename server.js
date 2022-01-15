@@ -23,5 +23,11 @@ app.use(cors());
 app.use(express.json());
 
 // Mount routes
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 // Tell app to listen on PORT
+app.listen(PORT, () => {
+  console.log(`Express is listening on port ${PORT}`);
+});
