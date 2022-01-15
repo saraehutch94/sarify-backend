@@ -9,7 +9,7 @@ const app = express();
 // Configure application settings
 require("dotenv").config();
 
-const { PORT = 3001 } = process.env;
+const { DATABASE_URL, PORT = 3001 } = process.env;
 
 // Connect to database
 
