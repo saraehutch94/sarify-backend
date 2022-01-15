@@ -19,6 +19,11 @@ trackRouter.get("/tracks", (req, res) => {
 // update route
 
 // create route
+trackRouter.post("/tracks", (req, res) => {
+  Track.create(req.body, (error, createdTrack) => {
+    res.json(createdTrack);
+  });
+});
 
 // show route
 
