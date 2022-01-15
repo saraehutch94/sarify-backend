@@ -5,6 +5,7 @@ const express = require("express");
 const app = express();
 
 // Configure application settings
+require("dotenv").config();
 
 // Connect to database
 
