@@ -3,6 +3,7 @@ const express = require("express");
 const morgan = require("morgan");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const trackController = require("./controllers/tracks");
 
 // Initialize application
 const app = express();
@@ -42,11 +43,6 @@ app.use(cors());
 
 // body-parsing middleware
 app.use(express.json());
-
-// Mount routes
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
 
 // Tell app to listen on PORT
 app.listen(PORT, () => {
