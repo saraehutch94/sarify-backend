@@ -15,6 +15,11 @@ trackRouter.get("/tracks", (req, res) => {
 });
 
 // delete route
+trackRouter.delete("/tracks/:id", (req, res) => {
+  Track.findByIdAndDelete(req.params.id, (error, deletedTrack) => {
+    res.json(deletedTrack);
+  });
+});
 
 // update route
 
