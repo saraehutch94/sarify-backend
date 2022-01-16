@@ -22,6 +22,16 @@ trackRouter.delete("/tracks/:id", (req, res) => {
 });
 
 // update route
+trackRouter.put("/tracks/:id", (req, res) => {
+  Track.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (error, updatedTrack) => {
+      res.json(updatedTrack);
+    }
+  );
+});
 
 // create route
 trackRouter.post("/tracks", (req, res) => {
