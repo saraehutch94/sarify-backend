@@ -41,6 +41,11 @@ trackRouter.post("/tracks", (req, res) => {
 });
 
 // show route
+trackRouter.get("/tracks/:id", (req, res) => {
+  Track.findById(req.params.id, (error, foundTrack) => {
+    res.json(foundTrack);
+  });
+});
 
 // Export router object
 module.exports = trackRouter;
