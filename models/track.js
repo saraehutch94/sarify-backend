@@ -10,7 +10,7 @@ const trackSchema = new Schema(
     title: String,
     artist: String,
     coverArt: String,
-    description: String,
+    project: String,
     genre: String,
   },
   { timestamps: true }
