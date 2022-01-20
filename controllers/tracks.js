@@ -8,9 +8,9 @@ const trackRouter = express.Router();
 // Set up routes
 
 // home route
-trackRouter.get("/", (req, res) => {
-  res.json("Home page");
-});
+// trackRouter.get("/", (req, res) => {
+//   res.json("Home page");
+// });
 
 // index route
 trackRouter.get("/tracks", (req, res) => {
