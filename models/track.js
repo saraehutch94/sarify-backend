@@ -12,6 +12,7 @@ const trackSchema = new Schema(
     coverArt: String,
     project: String,
     genre: String,
+    uId: String,
   },
   { timestamps: true }
 );
