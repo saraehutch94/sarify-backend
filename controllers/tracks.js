@@ -49,7 +49,7 @@ trackRouter.post("/tracks", async (req, res) => {
   if (!token)
     return res.status(400).json({ message: "You must be logged in first" });
   const user = await admin.auth().verifyIdToken(token.replace("Bearer ", ""));
-  console.log(user);
+  req.body.uId = user.uid;
   Track.create(req.body, (error, createdTrack) => {
     res.json(createdTrack);
   });
