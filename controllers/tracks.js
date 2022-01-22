@@ -44,11 +44,12 @@ trackRouter.put("/tracks/:id", (req, res) => {
 });
 
 // create route
-trackRouter.post("/tracks", (req, res) => {
+trackRouter.post("/tracks", async (req, res) => {
   const token = req.get("Authorization");
   if (!token)
     return res.status(400).json({ message: "You must be logged in first" });
-
+  const user = await admin.auth().verifyIdToken(token.replace("Bearer ", ""));
+  console.log(user);
   Track.create(req.body, (error, createdTrack) => {
     res.json(createdTrack);
   });
