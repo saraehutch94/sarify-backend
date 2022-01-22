@@ -2,6 +2,16 @@
 const express = require("express");
 const Track = require("../models/track");
 
+// Firebase SDK
+
+const admin = require("firebase-admin");
+
+const serviceAccount = require("path/to/serviceAccountKey.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
+
 // Set up router object
 const trackRouter = express.Router();
 
