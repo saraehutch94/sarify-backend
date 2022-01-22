@@ -46,6 +46,9 @@ trackRouter.put("/tracks/:id", (req, res) => {
 // create route
 trackRouter.post("/tracks", (req, res) => {
   const token = req.get("Authorization");
+  if (!token)
+    return res.status(400).json({ message: "You must be logged in first" });
+
   Track.create(req.body, (error, createdTrack) => {
     res.json(createdTrack);
   });
