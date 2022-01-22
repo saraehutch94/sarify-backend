@@ -45,6 +45,7 @@ trackRouter.put("/tracks/:id", (req, res) => {
 
 // create route
 trackRouter.post("/tracks", (req, res) => {
+  const token = req.get("Authorization");
   Track.create(req.body, (error, createdTrack) => {
     res.json(createdTrack);
   });
